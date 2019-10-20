@@ -8,7 +8,7 @@ using namespace std;
 Matriz::Matriz(){
 
 }
-Matriz::Matriz(int linhas, int colunas, const double &valor = 0){
+Matriz::Matriz(int linhas, int colunas, const double &valor){
 
 }
 Matriz::Matriz(const Matriz &m){

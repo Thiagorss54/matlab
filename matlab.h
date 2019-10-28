@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void printM(vector<vector<double>> );
+void printM(vector<vector<double>>);
 class Matriz{
 	private:
         vector<vector<double>> matriz;

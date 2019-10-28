@@ -38,3 +38,21 @@ ostream& operator << (ostream& out, Matriz& M){
        out << endl;
    }
 }
+istream& operator >> (istream& in, Matriz&M){
+    int linha, coluna;
+    double valor;
+    cout <<"linhas: ";
+    in >> linha;
+    cout << "colunas: ";
+    in >> coluna;
+ for(int i =0; i < linha;++i){
+       vector<double> aux;
+       for(int j =0; j < coluna; ++j ){
+           cout<< "m[" << i <<"][" << j << "] = ";
+           in>> valor;
+           aux.push_back(valor);
+           
+       }
+       M.matriz.push_back(aux);
+   }
+}

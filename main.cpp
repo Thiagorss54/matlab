@@ -14,4 +14,7 @@ int main (){
     cout<<linhab<<endl;
     Matriz C(3,4,5);
     cout << C ;
+    Matriz D;
+    cin >> D;
+    cout << D;
 }

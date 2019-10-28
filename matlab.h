@@ -22,6 +22,7 @@ class Matriz{
         inline int getRows(){ return matriz.size(); }
         inline int getCols(){ return matriz[0].size(); }
         friend ostream& operator << (ostream&, Matriz&);
+        friend istream& operator >> (istream&, Matriz&);
 
         // **********
         vector<vector<double>> getMatriz(){return matriz;}

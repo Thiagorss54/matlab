@@ -21,6 +21,7 @@ class Matriz{
         ~Matriz(); //destrutor
         inline int getRows(){ return matriz.size(); }
         inline int getCols(){ return matriz[0].size(); }
+        friend ostream& operator << (ostream&, Matriz&);
 
         // **********
         vector<vector<double>> getMatriz(){return matriz;}

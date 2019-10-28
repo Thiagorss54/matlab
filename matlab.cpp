@@ -30,32 +30,24 @@ void Matriz::zeros(){
 }
 
 Matriz Matriz::operator +(const Matriz& m){
-    int tamlinha = matriz.size();
-    int tamcol = matriz[0].size();
-    if (tamlinha < m.matriz.size()) tamlinha = m.matriz.size();
-    if (tamcol < m.matriz[0].size()) tamcol = m.matriz[0].size();
- 
+    int tamlinha, tamlinhaa = matriz.size(), tamlinhab = m.matriz.size();
+    int tamcol, tamcola = matriz[0].size(), tamcolb = m.matriz[0].size();
+    if (tamlinhaa >= tamlinhab) tamlinha = tamlinhaa;
+        else tamlinha = tamlinhab;
+    if (tamcola >= tamcolb) tamcol = tamcola;
+        else tamcol = tamcolb;
     Matriz r;
     for(int i =0;i < tamlinha ;i++){
         vector<double> aux;
         for(int j=0;j < tamcol ;j++){
-            if (matriz[i][j] == ) cout<<"ACHEI"<<endl;
-            cout<<"aqui";
-            aux.push_back(matriz[i][j] + m.matriz[i][j]); 
-            cout<<"aali"<<endl;    
+            if (i>=tamlinhaa || j>=tamcola) aux.push_back(m.matriz[i][j]);
+            else if (i>=tamlinhab || j>=tamcolb) aux.push_back(matriz[i][j]);
+            else aux.push_back(matriz[i][j] + m.matriz[i][j]); 
         }
         r.matriz.push_back(aux);
     }
-    printM(r.getMatriz());
     return r;
 }
-
-    // int tamlinha, tamlinhaa = matriz.size(), tamlinhab = m.matriz.size();
-    // int tamcol, tamcola = matriz[0].size(), tamcolb = m.matriz[0].size();
-    // if (tamlinhaa >= tamlinhab) tamlinha = tamlinhaa;
-    //     else tamlinha = tamlinhab;
-    // if (tamcola >= tamcolb) tamcol = tamcola;
-    //     else tamcol = tamcolb;
 
 //**************** printar matriz ****************
 void printM(vector<vector<double>> M){

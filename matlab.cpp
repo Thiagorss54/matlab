@@ -5,9 +5,8 @@
 
 using namespace std;
 
-Matriz::Matriz(){
+Matriz::Matriz():Matriz(0,0,0){}
 
-}
 Matriz::Matriz(const int linhas, const int colunas, const double &valor){
    for(int i =0; i < linhas;++i){
        vector<double> aux;
@@ -35,6 +34,6 @@ void printM(vector<vector<double>> M){
 }    
 
 int Matriz::getRows(){
-    cout<<matriz[0].size()<<endl;
-    return matriz[0].size();
+    cout<<matriz.size()<<endl;
+    return matriz.size();
 }

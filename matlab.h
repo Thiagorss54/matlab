@@ -7,6 +7,7 @@
 
 using namespace std;
 
+void printM(vector<vector<double>> );
 class Matriz{
 	private:
         vector<vector<double>> matriz;
@@ -19,6 +20,9 @@ class Matriz{
         Matriz(const Matriz &m); //construtor de cópia
         ~Matriz(); //destrutor
         int getRows();
+
+        // **********
+        vector<vector<double>> getMatriz(){return matriz;}
 
 };
 

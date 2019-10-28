@@ -3,6 +3,11 @@
 using namespace std;
 
 int main (){
-    Matriz A(2,2,10);
-    // int linhaa = A.getRows();
+    Matriz B(3,2);
+    Matriz A(B);
+    Matriz A;
+    int linhaa = A.getRows();
+    cout<<linhaa<<endl;
+    int cola = A.getCols();
+    cout<<cola<<endl;
 }

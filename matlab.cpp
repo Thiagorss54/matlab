@@ -92,3 +92,6 @@ istream& operator >> (istream& in, Matriz&M){
        M.matriz.push_back(aux);
    }
 }
+double& Matriz::operator() ( int linha, int coluna){
+    return matriz[linha-1][coluna-1];
+}

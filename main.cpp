@@ -19,4 +19,6 @@ int main (){
     cout << D;
     // Matriz D = A + C;
     // printM(D.getMatriz());
+    D(1,1)=10;
+    cout << D;
 }

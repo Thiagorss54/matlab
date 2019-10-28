@@ -5,12 +5,13 @@ using namespace std;
 int main (){
     Matriz A(2,2,10);
     Matriz B;
-    Matriz C(3,5,5);
+    Matriz C(3,3,5);
     cout << C;
     cout <<endl<<endl;
-
-    Matriz E = A + C;
-    cout<< E;
+    A -= C;
+    cout<<A;
+    // Matriz E = A - C;
+    // cout << E;
     Matriz D;
     cin >> D;
     cout << D;

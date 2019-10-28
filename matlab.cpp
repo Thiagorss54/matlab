@@ -49,6 +49,67 @@ Matriz Matriz::operator +(const Matriz& m){
     return r;
 }
 
+void Matriz::operator +=(const Matriz& m){
+    int tamlinha, tamlinhaa = matriz.size(), tamlinhab = m.matriz.size();
+    int tamcol, tamcola = matriz[0].size(), tamcolb = m.matriz[0].size();
+    if (tamlinhaa >= tamlinhab) tamlinha = tamlinhaa;
+        else tamlinha = tamlinhab;
+    if (tamcola >= tamcolb) tamcol = tamcola;
+        else tamcol = tamcolb;
+    Matriz r;
+    for(int i =0;i < tamlinha ;i++){
+        vector<double> aux;
+        for(int j=0;j < tamcol ;j++){
+            if (i>=tamlinhaa || j>=tamcola) aux.push_back(m.matriz[i][j]);
+            else if (i>=tamlinhab || j>=tamcolb) aux.push_back(matriz[i][j]);
+            else aux.push_back(matriz[i][j] + m.matriz[i][j]); 
+        }
+        r.matriz.push_back(aux);
+    }
+    matriz = r.matriz;
+}
+
+Matriz Matriz::operator -(const Matriz& m){
+    int tamlinha, tamlinhaa = matriz.size(), tamlinhab = m.matriz.size();
+    int tamcol, tamcola = matriz[0].size(), tamcolb = m.matriz[0].size();
+    if (tamlinhaa >= tamlinhab) tamlinha = tamlinhaa;
+        else tamlinha = tamlinhab;
+    if (tamcola >= tamcolb) tamcol = tamcola;
+        else tamcol = tamcolb;
+    Matriz r;
+    for(int i =0;i < tamlinha ;i++){
+        vector<double> aux;
+        for(int j=0;j < tamcol ;j++){
+            if (i>=tamlinhaa || j>=tamcola) aux.push_back(-m.matriz[i][j]);
+            else if (i>=tamlinhab || j>=tamcolb) aux.push_back(matriz[i][j]);
+            else aux.push_back((matriz[i][j]) - (m.matriz[i][j])); 
+        }
+        r.matriz.push_back(aux);
+    }
+    return r;
+}
+
+void Matriz::operator -=(const Matriz& m){
+    int tamlinha, tamlinhaa = matriz.size(), tamlinhab = m.matriz.size();
+    int tamcol, tamcola = matriz[0].size(), tamcolb = m.matriz[0].size();
+    if (tamlinhaa >= tamlinhab) tamlinha = tamlinhaa;
+        else tamlinha = tamlinhab;
+    if (tamcola >= tamcolb) tamcol = tamcola;
+        else tamcol = tamcolb;
+    Matriz r;
+    for(int i =0;i < tamlinha ;i++){
+        vector<double> aux;
+        for(int j=0;j < tamcol ;j++){
+            if (i>=tamlinhaa || j>=tamcola) aux.push_back(-m.matriz[i][j]);
+            else if (i>=tamlinhab || j>=tamcolb) aux.push_back(matriz[i][j]);
+            else aux.push_back((matriz[i][j]) - (m.matriz[i][j])); 
+        }
+        r.matriz.push_back(aux);
+    }
+    matriz = r.matriz;
+}
+
+
 //**************** printar matriz ****************
 void printM(vector<vector<double>> M){
    for(int i =0;i < M.size();i++){

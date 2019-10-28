@@ -10,5 +10,6 @@ int main (){
     int cola = A.getCols();
     cout<<cola<<endl;
     Matriz B;
-    B.getRows();
+    int linhab = B.getRows();
+    cout<<linhab<<endl;
 }

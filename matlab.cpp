@@ -30,3 +30,11 @@ void printM(vector<vector<double>> M){
        cout << endl;
    }
 }   
+ostream& operator << (ostream& out, Matriz& M){
+    for(int i =0;i < M.matriz.size();i++){
+       for(int j=0;j < M.matriz[i].size();j++){
+           out << M.matriz[i][j] << " ";
+       }
+       out << endl;
+   }
+}

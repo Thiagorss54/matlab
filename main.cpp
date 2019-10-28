@@ -12,4 +12,6 @@ int main (){
     Matriz B;
     int linhab = B.getRows();
     cout<<linhab<<endl;
+    Matriz C(3,4,5);
+    cout << C ;
 }

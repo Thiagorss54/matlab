@@ -18,6 +18,7 @@ class Matriz{
             // os valores da matriz preenchidos com a variável valor.
         Matriz(const Matriz &m); //construtor de cópia
         ~Matriz(); //destrutor
+        int getRows();
 
 };
 

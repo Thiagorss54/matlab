@@ -17,4 +17,6 @@ int main (){
     Matriz D;
     cin >> D;
     cout << D;
+    // Matriz D = A + C;
+    // printM(D.getMatriz());
 }

@@ -21,6 +21,9 @@ class Matriz{
         ~Matriz(); //destrutor
         inline int getRows(){ return matriz.size(); }
         inline int getCols(){ return matriz[0].size(); }
+        void zeros();
+        inline void operator =(const Matriz& m){ matriz = m.matriz; }
+        Matriz operator +(const Matriz& m);
         friend ostream& operator << (ostream&, Matriz&);
         friend istream& operator >> (istream&, Matriz&);
 

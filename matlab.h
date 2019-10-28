@@ -27,6 +27,7 @@ class Matriz{
         void operator +=(const Matriz& m);
         Matriz operator -(const Matriz& m);
         void operator -=(const Matriz& m);
+        void operator *=(const double a);
         double& operator() (int, int);
         friend ostream& operator << (ostream&, Matriz&);
         friend istream& operator >> (istream&, Matriz&);

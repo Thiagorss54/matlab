@@ -145,6 +145,18 @@ istream& operator >> (istream& in, Matriz&M){
        M.matriz.push_back(aux);
    }
 }
+
+void Matriz::operator *=(const double a){
+    int linha = matriz.size();
+    int coluna = matriz[0].size();
+
+    for (int i = 0 ; i < linha ; i++){
+        for (int j = 0 ; j < coluna ; j++){
+            matriz[i][j] *= a;
+        }
+    }
+}
+
 double& Matriz::operator() ( int linha, int coluna){
     return matriz[linha-1][coluna-1];
 }

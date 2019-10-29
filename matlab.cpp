@@ -147,8 +147,8 @@ istream& operator >> (istream& in, Matriz&M){
 }
 
 void Matriz::operator *=(const double a){
-    int linha = matriz.size();
-    int coluna = matriz[0].size();
+    int linha =this->getRows();
+    int coluna = this->getCols();
 
     for (int i = 0 ; i < linha ; i++){
         for (int j = 0 ; j < coluna ; j++){
@@ -160,3 +160,75 @@ void Matriz::operator *=(const double a){
 double& Matriz::operator() ( int linha, int coluna){
     return matriz[linha-1][coluna-1];
 }
+
+bool Matriz::operator ==(const Matriz& m){
+    int linha_a = matriz.size();
+    int coluna_a = matriz[0].size();
+
+    int linha_b = m.matriz.size();
+    int col_b = m.matriz[0].size();
+
+    if(linha_a != linha_b || coluna_a != col_b)  return false;
+
+    for (int i=0; i < linha_a; i++){
+        for (int j=0 ; j< coluna_a; j++){
+            if (matriz[i][j] != m.matriz[i][j]) return false; 
+        }
+    }
+    return true;
+}
+
+bool Matriz::operator !=(const Matriz& m){
+    int linha_a = matriz.size();
+    int coluna_a = matriz[0].size();
+
+    int linha_b = m.matriz.size();
+    int col_b = m.matriz[0].size();
+
+    if(linha_a != linha_b || coluna_a != col_b)  return true;
+
+    for (int i=0; i < linha_a; i++){
+        for (int j=0 ; j< coluna_a; j++){
+            if (matriz[i][j] != m.matriz[i][j]) return true; 
+        }
+    }
+    return false;
+}
+
+void Matriz::operator ^=(const Matriz& m){
+    matriz.clear();
+    int lin_m = m.matriz.size();
+    int col_m = m.matriz[0].size();
+    
+    for(int i = 0; i < col_m;i++ ){
+        vector <double> aux;
+        for (int j = 0; j < lin_m; j++){ 
+            aux.push_back(m.matriz[j][i]);
+        }
+        matriz.push_back(aux);
+    }
+}
+
+Matriz Matriz::operator *(const Matriz &m){
+    if(matriz[0].size() != m.matriz.size()){
+        cout << " c n fez gaal o buceta" << endl;
+        Matriz vazia;
+        return vazia;
+    }
+    else{
+        Matriz aux_matriz(matriz.size(), m.matriz.size(), 0);
+        
+        for (int i = 0; i < matriz.size(); i++){
+            for (int j = 0; j <m.matriz[0].size() ; j++){                
+                for(int k = 0; k < matriz[0].size();k++){
+                    aux_matriz.matriz[i][j] += matriz[i][k] * m.matriz[k][j];
+                }
+            }
+        }     
+        return aux_matriz;  
+    }
+}
+
+// Matriz::~Matriz(){
+//     matriz.clear();
+// }

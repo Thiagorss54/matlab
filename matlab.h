@@ -24,10 +24,14 @@ class Matriz{
         void zeros();
         inline void operator =(const Matriz& m){ matriz = m.matriz; }
         Matriz operator +(const Matriz& m);
+        Matriz operator *(const Matriz &m);
         void operator +=(const Matriz& m);
         Matriz operator -(const Matriz& m);
         void operator -=(const Matriz& m);
         void operator *=(const double a);
+        bool operator ==(const Matriz& m);
+        void operator ^=(const Matriz& m);
+        bool operator !=(const Matriz& m);
         double& operator() (int, int);
         friend ostream& operator << (ostream&, Matriz&);
         friend istream& operator >> (istream&, Matriz&);

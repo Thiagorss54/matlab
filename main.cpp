@@ -13,11 +13,18 @@ int main (){
 
     A *= 2;
     cout<<A;
+    if (A!=C) cout<<"Deu  bom"<<endl;
     // Matriz E = A - C;
     // cout << E;
     Matriz D;
+    
     cin >> D;
-    cout << D;
+    Matriz E;
+    cin >> E;
+    Matriz F;
+    F = D*E;
     D(1,1)=10;
-    cout << D;
+
+    cout << F;
+  
 }

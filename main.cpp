@@ -17,14 +17,16 @@ int main (){
     // Matriz E = A - C;
     // cout << E;
     Matriz D;
-    
     cin >> D;
+    Matriz G;
+    G = ~D;
+    cout << G;
+    cout<<endl;
     Matriz E;
     cin >> E;
     Matriz F;
     F = D*E;
     D(1,1)=10;
-
     cout << F;
   
 }

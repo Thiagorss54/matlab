@@ -17,10 +17,6 @@ Matriz::Matriz(const int linhas, const int colunas, const double &valor){
    }
 }
 
-Matriz::~Matriz(){
-    
-}
-
 void Matriz::zeros(){
     for(int i =0;i < matriz.size();i++){
        for(int j=0;j < matriz[i].size();j++){
@@ -137,7 +133,7 @@ istream& operator >> (istream& in, Matriz&M){
  for(int i =0; i < linha;++i){
        vector<double> aux;
        for(int j =0; j < coluna; ++j ){
-           cout<< "m[" << i <<"][" << j << "] = ";
+           cout<< "m[" << i+1 <<"][" << j+1 << "] = ";
            in>> valor;
            aux.push_back(valor);
            
@@ -195,23 +191,23 @@ bool Matriz::operator !=(const Matriz& m){
     return false;
 }
 
-void Matriz::operator ^=(const Matriz& m){
-    matriz.clear();
-    int lin_m = m.matriz.size();
-    int col_m = m.matriz[0].size();
-    
+Matriz Matriz::operator ~(){
+    int lin_m = matriz.size();
+    int col_m = matriz[0].size();
+    Matriz A;
     for(int i = 0; i < col_m;i++ ){
         vector <double> aux;
         for (int j = 0; j < lin_m; j++){ 
-            aux.push_back(m.matriz[j][i]);
+            aux.push_back(matriz[j][i]);
         }
-        matriz.push_back(aux);
+        A.matriz.push_back(aux);
     }
+    return A;
 }
 
 Matriz Matriz::operator *(const Matriz &m){
     if(matriz[0].size() != m.matriz.size()){
-        cout << " c n fez gaal o buceta" << endl;
+        cout << " Operacao invalida" << endl;
         Matriz vazia;
         return vazia;
     }
@@ -229,6 +225,6 @@ Matriz Matriz::operator *(const Matriz &m){
     }
 }
 
-// Matriz::~Matriz(){
-//     matriz.clear();
-// }
+Matriz::~Matriz() {
+    matriz.clear();
+}
